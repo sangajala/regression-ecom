@@ -132,7 +132,10 @@ public class MyStepdefs {
 
     @Before
     public void openBrowser(){
-        driver = BrowserFactory.getDriver(true,"IE");
+
+        String browser = System.getProperty("Browser");
+        System.out.println(browser);
+        driver = BrowserFactory.getDriver(true,browser);
     }
 
     @After
