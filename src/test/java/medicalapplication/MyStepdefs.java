@@ -200,4 +200,13 @@ public class MyStepdefs {
     public void theCodeShouldShowAnErrorMessage() {
 
     }
+
+    @And("^checkout as guest$")
+    public void checkoutAsGuest() {
+
+    }
+
+    @Then("^he should see \"([^\"]*)\"$")
+    public void heShouldSee(String arg0) throws Throwable {
+    }
 }
