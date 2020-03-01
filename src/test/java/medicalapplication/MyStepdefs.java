@@ -135,7 +135,11 @@ public class MyStepdefs {
 
         String browser = System.getProperty("Browser");
         System.out.println(browser);
-        driver = BrowserFactory.getDriver(true,browser);
+        try {
+            driver = BrowserFactory.getDriver(true,browser,true);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
     @After

@@ -124,44 +124,44 @@ public class MyStepdefs2 {
 //
 //    }
 
-    @Before
-    public void openBrowser(){
-//        WebDriverManager.chromedriver().setup();
-//        driver = new ChromeDriver();
-
-//        WebDriverManager.
-//        driver = new SafariDriver();
-
-//        driver = new InternetExplorerDriver();
-
+//    @Before
+//    public void openBrowser(){
+////        WebDriverManager.chromedriver().setup();
+////        driver = new ChromeDriver();
+//
+////        WebDriverManager.
+////        driver = new SafariDriver();
+//
+////        driver = new InternetExplorerDriver();
+//
+////        MutableCapabilities sauceOptions = new MutableCapabilities();
+////
+////        EdgeOptions browserOptions = new EdgeOptions();
+////        browserOptions.setCapability("platformName", "Windows 10");
+////        browserOptions.setCapability("browserVersion", "18.17763");
+////        browserOptions.setCapability("sauce:options", sauceOptions);
+//
 //        MutableCapabilities sauceOptions = new MutableCapabilities();
 //
-//        EdgeOptions browserOptions = new EdgeOptions();
-//        browserOptions.setCapability("platformName", "Windows 10");
-//        browserOptions.setCapability("browserVersion", "18.17763");
+//        FirefoxOptions browserOptions = new FirefoxOptions();
+//        browserOptions.setCapability("platformName", "macOS 10.14");
+//        browserOptions.setCapability("browserVersion", "58.0");
 //        browserOptions.setCapability("sauce:options", sauceOptions);
-
-        MutableCapabilities sauceOptions = new MutableCapabilities();
-
-        FirefoxOptions browserOptions = new FirefoxOptions();
-        browserOptions.setCapability("platformName", "macOS 10.14");
-        browserOptions.setCapability("browserVersion", "58.0");
-        browserOptions.setCapability("sauce:options", sauceOptions);
-
-        try {
-            driver = new RemoteWebDriver(new URL("https://2020consulting:50f65bf3-aaf6-4139-8c6d-dc451d52f517@ondemand.saucelabs.com:443/wd/hub"),browserOptions);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
-    }
-
-    @After
-    public void closeBrowserHooks(){
-        driver.quit();
-    }
+//
+//        try {
+//            driver = new RemoteWebDriver(new URL("https://2020consulting:50f65bf3-aaf6-4139-8c6d-dc451d52f517@ondemand.saucelabs.com:443/wd/hub"),browserOptions);
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
+//
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
+//    }
+//
+//    @After
+//    public void closeBrowserHooks(){
+//        driver.quit();
+//    }
 
 //    @When("^he go to my account$")
 //    public void heGoToMyAccount() {

@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import pageObjects.basePage;
@@ -20,11 +21,16 @@ public class BrowserFactory extends basePage {
 
     static WebDriver driver;
 
+    public static final String USERNAME = "salesuser1";
+    public static final String AUTOMATE_KEY = "GWXF5zYmqxr1FJtu7XyA";
+    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+
+
     public BrowserFactory(WebDriver driver) {
         super(driver);
     }
 
-    public static WebDriver getDriver(boolean cloud, String browserName) {
+    public static WebDriver getDriver(boolean cloud, String browserName,boolean browserstack) throws MalformedURLException {
 
         if(driver!=null){
             return driver;
@@ -32,8 +38,21 @@ public class BrowserFactory extends basePage {
 
         if (cloud) {
 
+            if(browserstack)
+            {
+                DesiredCapabilities caps = new DesiredCapabilities();
+                caps.setCapability("browser", "Edge");
+                caps.setCapability("browser_version", "80.0");
+                caps.setCapability("os", "OS X");
+                caps.setCapability("os_version", "Sierra");
+                caps.setCapability("resolution", "1024x768");
+                caps.setCapability("name", "Bstack-[Java] Sample Test");
 
-            if (browserName.equals("chrome")) {
+                driver = new RemoteWebDriver(new URL(URL), caps);
+                return driver;
+
+            }
+            else if (browserName.equals("chrome")) {
 
                 MutableCapabilities sauceOptions = new MutableCapabilities();
 
