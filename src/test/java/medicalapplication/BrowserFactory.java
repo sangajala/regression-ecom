@@ -21,8 +21,8 @@ public class BrowserFactory extends basePage {
 
     static WebDriver driver;
 
-    public static final String USERNAME = "salesuser1";
-    public static final String AUTOMATE_KEY = "GWXF5zYmqxr1FJtu7XyA";
+    public static final String USERNAME = "rumana4";
+    public static final String AUTOMATE_KEY = "qbbdcGakicqgZzzArKwg";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 
