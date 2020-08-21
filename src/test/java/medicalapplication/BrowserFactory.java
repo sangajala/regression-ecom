@@ -110,6 +110,12 @@ public class BrowserFactory extends basePage {
                 Assert.fail("This browser is not supported");
             }
         }
+        try{
+        Thred.sleep(60000)
+        }
+        catch(Exception e)
+        {
+        }
         return driver;
 
     }
