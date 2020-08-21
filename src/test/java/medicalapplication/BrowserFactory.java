@@ -111,7 +111,7 @@ public class BrowserFactory extends basePage {
             }
         }
         try{
-        Thred.sleep(60000);
+        Thread.sleep(60000);
         }
         catch(Exception e)
         {
